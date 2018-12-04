@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Aurochs", "Aurochs\Aurochs.fsproj", "{F8D930A4-1879-4A58-A4E0-0ECA0147E4C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8D930A4-1879-4A58-A4E0-0ECA0147E4C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D930A4-1879-4A58-A4E0-0ECA0147E4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D930A4-1879-4A58-A4E0-0ECA0147E4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D930A4-1879-4A58-A4E0-0ECA0147E4C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF950368-157C-4538-AA79-FDBDEE3B09B9}
+	EndGlobalSection
+EndGlobal
