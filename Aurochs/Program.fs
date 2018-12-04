@@ -12,8 +12,7 @@ open Giraffe
 
 let webApp =
     choose [
-        route "/ping"   >=> text "pong"
-        route "/"       >=> htmlFile "/pages/index.html" ]
+        route "/ping"   >=> text "pong" ]
 
 
 let configureApp (app: IApplicationBuilder) =
