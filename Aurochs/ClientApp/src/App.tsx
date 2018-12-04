@@ -35,7 +35,7 @@ class App extends Component<IAppProps, IAppState> {
                     <div className="row center-xs">
                         <div className="col-8-xs col-offset-2-xs">
                             <h1>Aurochs</h1>
-                            <h3>{greeting}</h3>
+                            <h3>&ldquo;{greeting}&rdquo;</h3>
                         </div>
                     </div>
                 </main>
