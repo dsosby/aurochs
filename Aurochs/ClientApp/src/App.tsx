@@ -31,8 +31,14 @@ class App extends Component<IAppProps, IAppState> {
 
         return (
             <div className="App">
-                <h1>Stellar Demos Start Here</h1>
-                <h6>{greeting}</h6>
+                <main>
+                    <div className="row center-xs">
+                        <div className="col-8-xs col-offset-2-xs">
+                            <h1>Aurochs</h1>
+                            <h3>{greeting}</h3>
+                        </div>
+                    </div>
+                </main>
             </div>
         );
     }
