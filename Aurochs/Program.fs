@@ -1,25 +1,32 @@
-namespace Aurochs
+module Aurochs.WebServer
 
 open System
-open System.Collections.Generic
-open System.IO
-open System.Linq
-open System.Threading.Tasks
-open Microsoft.AspNetCore
+open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
-open Microsoft.Extensions.Configuration
-open Microsoft.Extensions.Logging
+open Microsoft.Extensions.DependencyInjection
+open Giraffe
 
-module Program =
-    let exitCode = 0
+let webApp =
+    choose [
+        route "/ping"   >=> text "pong"
+        route "/"       >=> htmlFile "/pages/index.html" ]
 
-    let CreateWebHostBuilder args =
-        WebHost
-            .CreateDefaultBuilder(args)
-            .UseStartup<Startup>();
+let configureApp (app: IApplicationBuilder) =
+    // Add Giraffe to the ASP.NET Core pipeline
+    app.UseGiraffe webApp
+    app.UseDeveloperExceptionPage() |> ignore
+    app.UseHttpsRedirection() |> ignore
 
-    [<EntryPoint>]
-    let main args =
-        CreateWebHostBuilder(args).Build().Run()
+let configureServices (services: IServiceCollection) =
+    // Add Giraffe dependencies
+    services.AddGiraffe() |> ignore
 
-        exitCode
+[<EntryPoint>]
+let main _ =
+    WebHostBuilder()
+        .UseKestrel()
+        .Configure(Action<IApplicationBuilder> configureApp)
+        .ConfigureServices(configureServices)
+        .Build()
+        .Run()
+    0
