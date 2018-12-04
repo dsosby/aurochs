@@ -10,9 +10,14 @@ open Microsoft.Extensions.DependencyInjection
 
 open Giraffe
 
+type InitData =
+    { greeting: string }
+
 let webApp =
-    choose [
-        route "/ping"   >=> text "pong" ]
+    subRoute "/api"
+        (choose [
+            GET >=> route "/init" >=> json { greeting = "Hello world" }
+        ])
 
 
 let configureApp (app: IApplicationBuilder) =
